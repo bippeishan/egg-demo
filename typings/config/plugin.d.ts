@@ -2,31 +2,30 @@
 // Do not modify this file!!!!!!!!!
 /* eslint-disable */
 
-import "egg";
-import "egg-onerror";
-import "egg-session";
-import "egg-i18n";
-import "egg-watcher";
-import "egg-multipart";
-import "egg-security";
-import "egg-development";
-import "egg-logrotator";
-import "egg-schedule";
-import "egg-static";
-import "egg-jsonp";
-import "egg-view";
-import "@eggjs/tegg-plugin";
-import "@eggjs/tegg-config";
-import "@eggjs/tegg-controller-plugin";
-import "@eggjs/tegg-schedule-plugin";
-import "@eggjs/tegg-eventbus-plugin";
-import "@eggjs/tegg-aop-plugin";
-import "egg-tracer";
-import "egg-sequelize";
-import "egg-validate";
-import "egg-typebox-validate";
-import { EggPluginItem } from "egg";
-declare module "egg" {
+import 'egg';
+import 'egg-onerror';
+import 'egg-session';
+import 'egg-i18n';
+import 'egg-watcher';
+import 'egg-multipart';
+import 'egg-security';
+import 'egg-development';
+import 'egg-logrotator';
+import 'egg-schedule';
+import 'egg-static';
+import 'egg-jsonp';
+import 'egg-view';
+import '@eggjs/tegg-plugin';
+import '@eggjs/tegg-config';
+import '@eggjs/tegg-controller-plugin';
+import '@eggjs/tegg-schedule-plugin';
+import '@eggjs/tegg-eventbus-plugin';
+import '@eggjs/tegg-aop-plugin';
+import 'egg-tracer';
+import 'egg-typebox-validate';
+import '@eggjs/tegg-orm-plugin';
+import { EggPluginItem } from 'egg';
+declare module 'egg' {
   interface EggPlugin {
     onerror?: EggPluginItem;
     session?: EggPluginItem;
@@ -48,7 +47,7 @@ declare module "egg" {
     aopModule?: EggPluginItem;
     tracer?: EggPluginItem;
     sequelize?: EggPluginItem;
-    validate?: EggPluginItem;
     typeboxValidate?: EggPluginItem;
+    teggOrm?: EggPluginItem;
   }
 }

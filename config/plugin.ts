@@ -18,6 +18,10 @@ const plugin: EggPlugin = {
     enable: true,
     package: "@eggjs/tegg-schedule-plugin",
   },
+  teggOrm: {
+    package: "@eggjs/tegg-orm-plugin",
+    enable: true,
+  },
   eventbusModule: {
     enable: true,
     package: "@eggjs/tegg-eventbus-plugin",
@@ -30,18 +34,18 @@ const plugin: EggPlugin = {
     enable: true,
     package: "egg-tracer",
   },
-  sequelize: {
-    enable: true,
-    package: "egg-sequelize",
-  },
-  // validate: {
-  //   enable: true,
-  //   package: "egg-validate",
-  // },
   typeboxValidate: {
     enable: true,
     package: "egg-typebox-validate",
   },
+  // sequelize: {
+  //   enable: false,
+  //   package: "egg-sequelize",
+  // },
+  // validate: {
+  //   enable: true,
+  //   package: "egg-validate",
+  // },
 };
 
 export default plugin;

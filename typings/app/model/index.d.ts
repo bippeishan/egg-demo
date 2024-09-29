@@ -2,10 +2,10 @@
 // Do not modify this file!!!!!!!!!
 /* eslint-disable */
 
-import 'egg';
-import ExportUsers from '../../../app/model/users';
+import "egg";
+import ExportUsers from "../../../app/users/model/users";
 
-declare module 'egg' {
+declare module "egg" {
   interface IModel {
     Users: ReturnType<typeof ExportUsers>;
   }

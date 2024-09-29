@@ -13,7 +13,7 @@ import {
 } from "@eggjs/tegg";
 import { Static } from "@sinclair/typebox";
 
-import UsersService from "../service/users";
+import UsersService from "../../service/users";
 import { createRule } from "./type";
 
 @HTTPController({

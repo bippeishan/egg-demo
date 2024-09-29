@@ -20,6 +20,12 @@ export default class UsersService {
   }
 
   async findAll(params: ServiceFindAllParams) {
-    return await this.model.Users.findAll(params);
+    const totalCount = await this.model.Users.count();
+    const infos = await this.model.Users.findAll(params);
+
+    return {
+      infos,
+      totalCount,
+    };
   }
 }

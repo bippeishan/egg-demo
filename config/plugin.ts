@@ -30,13 +30,17 @@ const plugin: EggPlugin = {
     enable: true,
     package: "egg-tracer",
   },
-  // mysql: {
-  //   enable: true,
-  //   package: "egg-mysql",
-  // },
   sequelize: {
     enable: true,
     package: "egg-sequelize",
+  },
+  // validate: {
+  //   enable: true,
+  //   package: "egg-validate",
+  // },
+  typeboxValidate: {
+    enable: true,
+    package: "egg-typebox-validate",
   },
 };
 

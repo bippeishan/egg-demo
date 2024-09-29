@@ -1,3 +1,4 @@
+/* eslint-disable array-bracket-spacing */
 /* eslint-disable comma-dangle */
 /* eslint-disable quotes */
 import {
@@ -5,17 +6,20 @@ import {
   HTTPController,
   HTTPMethod,
   HTTPMethodEnum,
-  //   SingletonProto,
-  ContextProto,
   HTTPBody,
   HTTPQuery,
+  SingletonProto,
+  Context,
 } from "@eggjs/tegg";
-import UsersService from "../service/users";
+import { Static } from "@sinclair/typebox";
 
-@ContextProto()
+import UsersService from "../service/users";
+import { createRule } from "./type";
+
 @HTTPController({
   path: "/users",
 })
+@SingletonProto({})
 export class UsersController {
   @Inject()
   userService: UsersService;
@@ -24,17 +28,10 @@ export class UsersController {
     method: HTTPMethodEnum.POST,
     path: "",
   })
-  async create(@HTTPBody() params: any) {
-    const { name, email, password, role, responsibility, department } =
-      params || {};
-    return await this.userService.create({
-      name,
-      email,
-      password,
-      role,
-      responsibility,
-      department,
-    });
+  async create(@Context() ctx, @HTTPBody() params: Static<typeof createRule>) {
+    ctx.tValidate(createRule, params);
+
+    return await this.userService.create(params);
   }
 
   @HTTPMethod({

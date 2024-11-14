@@ -55,5 +55,9 @@
     "url": ""
   },
   "author": "bips",
-  "license": "MIT"
+  "license": "MIT",
+  "volta": {
+    "node": "22.3.0",
+    "npm": "10.8.1"
+  }
 }
